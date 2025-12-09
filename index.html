@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Fan - Sonic</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --sonic-blue:#0b61d1;
+      --sonic-light:#4aa0ff;
+      --gold:#ffd84a;
+      --bg:#0b1020;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #071028 60%);
+      color:#f5f7fb;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      min-height:100vh;
+    }
+    .navbar-brand{font-family:'Press Start 2P', monospace; color:var(--gold)!important}
+    .hero{
+      padding:4rem 0;
+    }
+    .hero .card{
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow:0 8px 30px rgba(2,6,23,0.6);
+    }
+    .ring{
+      width:64px;height:64px;border-radius:50%;
+      background:linear-gradient(180deg,var(--gold),#f3c43d);
+      display:inline-grid;place-items:center;color:#12212a;font-weight:700;
+      box-shadow:0 6px 20px rgba(0,0,0,0.5);font-family:'Press Start 2P',monospace
+    }
+    .feature-icon{width:72px;height:72px;border-radius:18px;background:linear-gradient(180deg,var(--sonic-blue),var(--sonic-light));display:grid;place-items:center}
+    .cards-row .card{border:0;background:transparent}
+    .gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+    footer{padding:2rem 0;color:#c8d6ff}
+    /* Responsive tweaks */
+    @media(min-width:992px){
+      .hero{padding:6rem 0}
+    }
+  /* GALERIA EM GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* HOVER NAS IMAGENS */
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* GALERIA EM GRID */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;
+}
+.gallery-grid img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.gallery-grid img:hover{
+  transform:scale(1.07);
+  box-shadow:0 8px 18px rgba(0,0,0,.25);
+}
+</style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <div class="container">
+      <a class="navbar-brand" href="#">SONIC FAN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4">
+          <div class="card p-4">
+            <h1 class="display-6" style="color:var(--gold)">Bem-vindo ao mundo do Sonic</h1>
+            <p class="lead">Página fã criada com HTML, CSS, JavaScript e Bootstrap. Visual limpo, responsivo e fácil de personalizar.</p>
+            <div class="d-flex gap-3 mt-3">
+              <a href="#galeria" class="btn btn-primary btn-lg">Ver Galeria</a>
+              <button id="play-sound" class="btn btn-outline-light">Tocar Som</button>
+            </div>
+            <hr style="border-color:rgba(255,255,255,0.04)">
+            <div class="d-flex align-items-center gap-3">
+              <div class="ring">R</div>
+              <div>
+                <small>Fã-clube online</small>
+                <div><strong>Mais de 10.000 anéis imaginários</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="IMG/adfc5a2e-a163-4924-8fb2-81e9275d7b67.png" alt="Sonic The Hedgehog" class="img-fluid rounded shadow-lg" style="max-height:420px;object-fit:contain">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FEATURES -->
+  <section id="sobre" class="py-5">
+    <div class="container">
+      <div class="row g-4 cards-row">
+        <div class="col-md-4">
+          <div class="card p-3 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <div class="feature-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h5>Velocidade</h5>
+                <p class="mb-0">Tudo sobre as corridas, fases e técnicas de movimento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <div class="feature-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h5>Personagens</h5>
+                <p class="mb-0">Perfis dos personagens: Tails, Knuckles, Amy e outros.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-3 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <div class="feature-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3l18 18" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h5>Galeria</h5>
+                <p class="mb-0">Imagens e fanarts — envie as suas para aparecer aqui.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <!-- GAMES -->
+  <section id="jogos" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">Jogos do Sonic</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Sonic the Hedgehog</h5>
+              <p class="card-text">Lançamento: 1991</p>
+              <p class="card-text">O primeiro jogo da série, lançado para Mega Drive/Genesis.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Sonic Adventure</h5>
+              <p class="card-text">Lançamento: 1998</p>
+              <p class="card-text">Primeira aventura 3D completa no Dreamcast.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Sonic Generations</h5>
+              <p class="card-text">Lançamento: 2011</p>
+              <p class="card-text">Comemoração dos 20 anos do Sonic com fases clássicas e modernas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAMEPLAYS -->
+  <section id="gameplays" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">Gameplays</h2>
+      <p class="mb-4">Insira abaixo os links dos vídeos que você quiser.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9">
+            <iframe src="Videos/Sonic Generations_ Green Hill (Modern) [1080 HD].mp4" title="Gameplay 1" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9">
+            <iframe src="Videos/Sonic Adventure DX_ Speed Highway (Sonic) [1080 HD].mp4" title="Gameplay 2" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9">
+            <iframe src="Videos/Sonic the Hedgehog_ Green Hill Zone Act 1.mp4" title="Gameplay 3" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+      </div>
+    </div>
+  </section>
+
+<section id="galeria" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">Galeria</h2>
+
+      <!-- CARROSSEL BOOTSTRAP -->
+      <div id="carouselSonic" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="IMG/download (2).jpg" class="d-block w-25" alt="Sonic">
+          </div>
+          <div class="carousel-item">
+            <img src="IMG/download (1).jpg" class="d-block w-25" alt="Amy Rose">
+          </div>
+          <div class="carousel-item">
+            <img src="IMG/download.jpg" class="d-block w-25" alt="Knuckles">
+          </div>
+          <div class="carousel-item">
+            <img src="IMG/13dd51135c28a09f3e4fe712c271b110.jpg" class="d-block w-25" alt="Tails">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSonic" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselSonic" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+      <!-- Mini-galeria com animação -->
+      <div class="gallery-grid mt-4">
+        <img src="IMG/download (2).jpg" alt="Sonic">
+        <img src="IMG/download (1).jpg" alt="Amy Rose">
+        <img src="IMG/download.jpg" alt="Knuckles">
+        <img src="IMG/13dd51135c28a09f3e4fe712c271b110.jpg" alt="Tails">
+      </div>
+
+      <div class="text-center mt-4">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contato" class="py-5 bg-transparent">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card p-4">
+            <h4>Contato</h4>
+            <form id="contactForm">
+              <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Mensagem</label>
+                <textarea class="form-control" rows="4" required></textarea>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary" type="submit">Enviar</button>
+                <small class="text-muted">Nunca compartilhamos seus dados.</small>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-top mt-5">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <small>© "Sonic Fan" — Projeto de demonstração. Substitua conteúdo conforme necessário.</small>
+      </div>
+      <div>
+        <a class="text-decoration-none text-light" href="#">Termos</a>
+        <span class="mx-2">•</span>
+        <a class="text-decoration-none text-light" href="#">Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Optional JS: Bootstrap + small custom script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Pequeno script para interatividade
+    document.getElementById('play-sound')?.addEventListener('click', () => {
+      // Para ativar som: coloque um arquivo chamado 'sonic-ring.mp3' em /assets e descomente abaixo
+      const audio = new Audio('assets/Sonic Ring.mp4'); audio.play();
+      
+    });
+
+    // Simples submissão do formulário (exemplo, sem backend)
+    document.getElementById('contactForm')?.addEventListener('submit', function(e){
+      e.preventDefault();
+      const btn = this.querySelector('button[type=submit]');
+      btn.disabled = true; btn.innerText = 'Enviando...';
+      setTimeout(()=>{ btn.disabled=false; btn.innerText='Enviar'; alert('Mensagem enviada (simulada). Obrigado!)' ); }, 900);
+    });
+  </script>
+  <!-- MODO CLARO/ESCURO + POSTS + LIKE SYSTEM -->
+  <script>
+    /* Toggle Tema */
+    const themeBtn = document.createElement('button');
+    themeBtn.id = 'themeToggle';
+    themeBtn.className = 'btn btn-warning position-fixed';
+    themeBtn.style.bottom = '20px';
+    themeBtn.style.right = '20px';
+    themeBtn.textContent = 'Tema';
+    document.body.appendChild(themeBtn);
+
+    themeBtn.addEventListener('click', ()=>{
+      document.body.classList.toggle('light-mode');
+    });
+
+    /* Estilo Light Mode */
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .light-mode{
+        background:white !important;
+        color:black !important;
+      }
+      .light-mode .card{background:#f3f3f3!important;color:#000!important;}
+      .light-mode nav, .light-mode footer{background:#e9e9e9!important;color:#000!important;}
+    `;
+    document.head.appendChild(style);
+
+    /* Sistema de Posts */
+    const postSection = document.createElement('section');
+    postSection.id = 'posts';
+    postSection.className = 'py-5';
+    postSection.innerHTML = `
+      <div class="container">
+        <h2 class="mb-3">Criar Post</h2>
+        <div class="card p-3 mb-4">
+          <textarea id="postText" class="form-control mb-3" rows="3" placeholder="Escreva algo..."></textarea>
+          <button id="postBtn" class="btn btn-primary w-100">Postar</button>
+        </div>
+        <div id="postFeed"></div>
+      </div>`;
+    document.body.insertBefore(postSection, document.querySelector('footer'));
+
+    document.getElementById('postBtn').addEventListener('click',()=>{
+      let text = document.getElementById('postText').value.trim();
+      if(!text) return;
+
+      let box = document.createElement('div');
+      box.className = 'card p-3 mb-3';
+      box.innerHTML = `
+        <p>${text}</p>
+        <button class="btn btn-sm btn-outline-danger likeBtn">❤ Curtir <span>0</span></button>
+      `;
+      document.getElementById('postFeed').prepend(box);
+      document.getElementById('postText').value = '';
+    });
+
+    /* Like System */
+    document.addEventListener('click', e=>{
+      if(e.target.classList.contains('likeBtn')){
+        let span = e.target.querySelector('span');
+        span.textContent = parseInt(span.textContent) + 1;
+      }
+    });
+  </script>
+</body>
+</html>
